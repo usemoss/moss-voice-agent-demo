@@ -8,18 +8,21 @@ type ConnectionDetails = {
   participantToken: string;
 };
 
-let voiceServerInstance: MossVoiceServer | null = null;
+// Cache the initialization promise to prevent race conditions with concurrent requests
+let voiceServerPromise: Promise<MossVoiceServer> | null = null;
 
 async function getVoiceServer(): Promise<MossVoiceServer> {
-  if (!voiceServerInstance) {
-    voiceServerInstance = await MossVoiceServer.create({
+  if (!voiceServerPromise) {
+    voiceServerPromise = MossVoiceServer.create({
       projectId: process.env.MOSS_PROJECT_ID!,
       projectKey: process.env.MOSS_PROJECT_KEY!,
       voiceAgentId: process.env.MOSS_VOICE_AGENT_ID!,
+    }).then((instance) => {
+      console.log('✅ MossVoiceServer instance created and cached');
+      return instance;
     });
-    console.log('✅ MossVoiceServer instance created and cached');
   }
-  return voiceServerInstance;
+  return voiceServerPromise;
 }
 
 export async function POST(req: Request) {
