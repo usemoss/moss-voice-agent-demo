@@ -145,7 +145,7 @@ You can update these values in [`app-config.ts`](./app-config.ts) to customize b
 
 #### Environment Variables
 
-You'll also need to configure your LiveKit credentials in `.env.local` (copy `.env.example` if you don't have one):
+You'll also need to configure your Moss Voice Agent credentials in `.env.local` (copy `.env.example` if you don't have one):
 
 ```env
 MOSS_PROJECT_ID=
