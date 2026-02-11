@@ -145,12 +145,12 @@ You can update these values in [`app-config.ts`](./app-config.ts) to customize b
 
 #### Environment Variables
 
-You'll also need to configure your LiveKit credentials in `.env.local` (copy `.env.example` if you don't have one):
+You'll also need to configure your Moss Voice Agent credentials in `.env.local` (copy `.env.example` if you don't have one):
 
 ```env
-LIVEKIT_API_KEY=your_livekit_api_key
-LIVEKIT_API_SECRET=your_livekit_api_secret
-LIVEKIT_URL=https://your-livekit-server-url
+MOSS_PROJECT_ID=
+MOSS_PROJECT_KEY=
+MOSS_VOICE_AGENT_ID=
 
 # Agent dispatch (https://docs.livekit.io/agents/server/agent-dispatch)
 # Leave AGENT_NAME blank to enable automatic dispatch
