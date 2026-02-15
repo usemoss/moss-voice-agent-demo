@@ -34,16 +34,16 @@ const BOTTOM_VIEW_MOTION_PROPS = {
   transition: {
     duration: 0.3,
     delay: 0.5,
-    ease: 'easeOut',
+    ease: [0, 0, 0.58, 1], // easeOut cubic-bezier
   },
-};
+} as const;
 
 const SHIMMER_MOTION_PROPS = {
   variants: {
     visible: {
       opacity: 1,
       transition: {
-        ease: 'easeIn',
+        ease: [0.42, 0, 1, 1], // easeIn cubic-bezier
         duration: 0.5,
         delay: 0.8,
       },
@@ -51,7 +51,7 @@ const SHIMMER_MOTION_PROPS = {
     hidden: {
       opacity: 0,
       transition: {
-        ease: 'easeIn',
+        ease: [0.42, 0, 1, 1], // easeIn cubic-bezier
         duration: 0.5,
         delay: 0,
       },
@@ -60,7 +60,7 @@ const SHIMMER_MOTION_PROPS = {
   initial: 'hidden',
   animate: 'visible',
   exit: 'hidden',
-};
+} as const;
 
 interface FadeProps {
   top?: boolean;

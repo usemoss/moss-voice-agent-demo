@@ -10,7 +10,7 @@ const motionAnimationProps = {
       scale: 0.1,
       transition: {
         duration: 0.1,
-        ease: 'linear' as const,
+        ease: [0, 0, 1, 1] as const, // linear
       },
     },
     visible: {
@@ -25,9 +25,9 @@ const motionAnimationProps = {
       },
     },
   },
-  initial: 'hidden',
-  animate: 'visible',
-  exit: 'hidden',
+  initial: 'hidden' as const,
+  animate: 'visible' as const,
+  exit: 'hidden' as const,
 };
 
 const agentChatIndicatorVariants = cva('bg-muted-foreground inline-block size-2.5 rounded-full', {
@@ -81,7 +81,7 @@ export function AgentChatIndicator({
   return (
     <motion.span
       {...motionAnimationProps}
-      transition={{ duration: 0.1, ease: 'linear' as const }}
+      transition={{ duration: 0.1, ease: [0, 0, 1, 1] }}
       className={cn(agentChatIndicatorVariants({ size }), className)}
       {...props}
     />

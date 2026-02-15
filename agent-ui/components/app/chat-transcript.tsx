@@ -12,7 +12,7 @@ const CONTAINER_MOTION_PROPS = {
     hidden: {
       opacity: 0,
       transition: {
-        ease: 'easeOut',
+        ease: [0, 0, 0.58, 1], // easeOut cubic-bezier
         duration: 0.3,
       },
     },
@@ -20,7 +20,7 @@ const CONTAINER_MOTION_PROPS = {
       opacity: 1,
       transition: {
         delay: 0.2,
-        ease: 'easeOut',
+        ease: [0, 0, 0.58, 1], // easeOut cubic-bezier
         duration: 0.3,
       },
     },
@@ -28,7 +28,7 @@ const CONTAINER_MOTION_PROPS = {
   initial: 'hidden',
   animate: 'visible',
   exit: 'hidden',
-};
+} as const;
 
 interface ChatTranscriptProps {
   hidden?: boolean;
