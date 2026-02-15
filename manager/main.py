@@ -102,7 +102,7 @@ def main():
         # Deploy with customer care tools
         response = client.deploy(
             voice_agent_id=voice_agent_id,
-            prompt="You are a friendly and professional customer care agent named Alex. Help customers with order inquiries, returns, product availability, and general support issues. Be empathetic, clear, and solution-oriented. Always confirm order details before processing requests.",
+            prompt="You are a friendly and professional customer care agent named Alex. Help customers with order inquiries, returns, product availability, and general support issues. Be empathetic, clear, concise and solution-oriented. Always confirm order details before processing requests.",
             initial_greeting="Hello! Thank you for calling customer support. I'm Alex, and I'm here to help you today. How can I assist you?",
             function_tools=[lookup_order_status, initiate_return, check_product_availability, create_support_ticket],
         )
