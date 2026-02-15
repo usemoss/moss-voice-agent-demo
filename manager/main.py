@@ -20,7 +20,7 @@ def lookup_order_status(order_id: str) -> str:
     # In a real application, this would query your order management system
     # This is a mock implementation for demonstration
     order_statuses = {
-        "ORD12345": "Your order is currently in transit and expected to arrive tomorrow.",
+        "ORD14825": "Your order is currently in transit and expected to arrive tomorrow.",
         "ORD67890": "Your order has been delivered on Feb 13, 2026.",
         "ORD11111": "Your order is being prepared for shipment."
     }
